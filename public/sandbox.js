@@ -1,3 +1,4 @@
+"use strict";
 var character = 'luigi';
 var age = 30;
 var isBlackBelt = false;
@@ -45,3 +46,11 @@ var ninjaOne;
 ninjaOne = { name: 'yoshi', age: 30 };
 var ninjaTwo;
 ninjaTwo = { name: 'Mario', age: 20, belt: 'black' };
+var count = 25;
+count = true;
+console.log(count);
+count = 'Mario';
+console.log(count);
+count = { age: 50, name: 'luigi' };
+console.log(count);
+console.log('test');

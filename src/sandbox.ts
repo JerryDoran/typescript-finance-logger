@@ -71,3 +71,16 @@ let ninjaTwo: {
 };
 
 ninjaTwo = { name: 'Mario', age: 20, belt: 'black' };
+
+let count: any = 25;
+
+count = true;
+console.log(count);
+
+count = 'Mario';
+console.log(count);
+
+count = { age: 50, name: 'luigi' };
+console.log(count);
+
+console.log('test');
