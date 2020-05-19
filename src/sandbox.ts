@@ -84,3 +84,68 @@ count = { age: 50, name: 'luigi' };
 console.log(count);
 
 console.log('test');
+
+// const greet = () => {
+//   console.log('hello world');
+// };
+
+let greet: Function;
+
+greet = () => {
+  console.log('Hello, again');
+};
+
+// Allways put default or optional (ex c?: number | string) at the end of the parameter
+// list
+const add = (a: number, b: number, c: number | string = 20) => {
+  console.log(a + b);
+  console.log(c);
+};
+
+add(5, 10, 'twenty');
+
+const minus = (a: number, b: number) => {
+  return a + b;
+};
+
+let result = minus(10, 7);
+
+// Aliases
+type StringOrNum = string | number;
+type objWithName = { name: string; uid: StringOrNum };
+
+// const logDetails = (uid: string | number, item: string) => {
+//   console.log(`${item} has a uid of ${uid}`);
+// };
+
+const logDetails = (uid: StringOrNum, item: string) => {
+  console.log(`${item} has a uid of ${uid}`);
+};
+
+// const sayHello = (user: { name: string; uid: string | number }) => {
+//   console.log(`${user.name} says hello`);
+// };
+
+const sayHello = (user: objWithName) => {
+  console.log(`${user.name} says hello`);
+};
+
+// Function Signatures
+let greeter: (a: string, b: string) => void;
+greeter = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`);
+};
+
+let calc: (a: number, b: number, c: string) => number;
+calc = (numOne: number, numTwo: number, action: string) => {
+  if (action === 'add') {
+    return numOne + numTwo;
+  } else {
+    return numOne - numTwo;
+  }
+};
+
+let logDeets: (obj: { name: string; age: number }) => void;
+logDeets = (ninja: { name: string; age: number }) => {
+  console.log(`${ninja.name} is ${ninja.age} years old`);
+};
