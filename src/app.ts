@@ -1,31 +1,8 @@
-// classes
-class Invoice {
-  // readonly client: string;
-  // private details: string;
-  // amount: number;
-
-  // constructor(client: string, details: string, amount: number) {
-  //   this.client = client;
-  //   this.details = details;
-  //   this.amount = amount;
-  // }
-
-  // short-hand method for defining properties of a class.  need to have access modifiers
-  constructor(
-    readonly client: string,
-    private details: string,
-    public amount: number
-  ) {}
-
-  format() {
-    return `${this.client} owes $${this.amount} for ${this.details}`;
-  }
-}
-
+import { Invoice } from './models/Invoice.js';
 const invoiceOne = new Invoice('mario', 'work on the mario websit', 500);
 const invoiceTwo = new Invoice('luigi', 'work on the luigi websit', 300);
 
-// this says that only invoice objects can be added to this array
+// this says that only invoice objects can be added to this array.
 let invoices: Invoice[] = [];
 invoices.push(invoiceOne);
 invoices.push(invoiceTwo);
