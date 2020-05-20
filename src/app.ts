@@ -1,4 +1,12 @@
-import { Invoice } from './models/Invoice.js';
+// interfaces
+interface IsPerson {
+  name: string;
+  age: number;
+  speak(a: string): void;
+  spend(a: number): number;
+}
+
+import { Invoice } from './models/invoice.js';
 const invoiceOne = new Invoice('mario', 'work on the mario websit', 500);
 const invoiceTwo = new Invoice('luigi', 'work on the luigi websit', 300);
 

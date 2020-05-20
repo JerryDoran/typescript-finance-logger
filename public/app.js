@@ -1,4 +1,4 @@
-import { Invoice } from './models/Invoice.js';
+import { Invoice } from './models/invoice.js';
 var invoiceOne = new Invoice('mario', 'work on the mario websit', 500);
 var invoiceTwo = new Invoice('luigi', 'work on the luigi websit', 300);
 // this says that only invoice objects can be added to this array.
