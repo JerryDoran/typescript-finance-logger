@@ -1,13 +1,22 @@
+import { Payment } from './models/Payment.js';
 import { Invoice } from './models/invoice.js';
-var invoiceOne = new Invoice('mario', 'work on the mario websit', 500);
-var invoiceTwo = new Invoice('luigi', 'work on the luigi websit', 300);
+// let docOne: HasFormatter;
+// let docTwo: HasFormatter;
+// docOne = new Invoice('yoshi', 'web work', 250);
+// docTwo = new Payment('mario', 'plumbing work', 200);
+// let docs: HasFormatter[] = [];
+// docs.push(docOne);
+// docs.push(docTwo);
+// console.log(docs);
+// const invoiceOne = new Invoice('mario', 'work on the mario websit', 500);
+// const invoiceTwo = new Invoice('luigi', 'work on the luigi websit', 300);
 // this says that only invoice objects can be added to this array.
-var invoices = [];
-invoices.push(invoiceOne);
-invoices.push(invoiceTwo);
-invoices.forEach(function (inv) {
-    console.log(inv.client, inv.amount, inv.format());
-});
+// let invoices: Invoice[] = [];
+// invoices.push(invoiceOne);
+// invoices.push(invoiceTwo);
+// invoices.forEach((inv) => {
+//   console.log(inv.client, inv.amount, inv.format());
+// });
 // use type casting for form element
 var newFormItem = document.getElementById('newItemForm');
 // use type casting for input elements
@@ -18,5 +27,12 @@ var amount = document.getElementById('amount');
 newFormItem.addEventListener('submit', function (e) {
     // prevent the page refresh when the form is submitted
     e.preventDefault();
-    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+    var doc;
+    if (type.value === 'invoice') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(doc);
 });
